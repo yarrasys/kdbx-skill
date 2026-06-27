@@ -1,0 +1,27 @@
+# ── Secrets: never commit vaults, key files, or env files ──────────────
+*.kdbx
+*.keyx
+*.key
+.env
+.env.*
+!.env.example
+
+# ── Python / uv ────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.uv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Local Claude Code config (machine-specific paths) ──────────────────
+.claude/settings.local.json
+
+# ── OS / editor ────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+.idea/
+.vscode/
