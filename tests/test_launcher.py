@@ -10,6 +10,12 @@ import pytest
 launcher = importlib.import_module("kdbx_core.launcher")
 ops = importlib.import_module("kdbx_core.ops")
 
+# The launcher is a POSIX `sh` shim (chmod 0755, runs via `sh`). A Windows `.cmd`
+# launcher is a follow-up (#1), so this whole module is POSIX-only.
+pytestmark = pytest.mark.skipif(
+    os.name == "nt", reason="launcher is a POSIX sh shim; Windows .cmd is a follow-up (#1)"
+)
+
 
 def _is_exec(p):
     return bool(p.stat().st_mode & stat.S_IXUSR)

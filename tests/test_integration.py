@@ -64,7 +64,8 @@ def test_full_lifecycle(repo, monkeypatch, capsys):
     # export -> 0600 dotenv, value present in file (expected) but not in stdout
     envf = repo / ".env"
     assert ops.dispatch(["export", "--out", str(envf), "--env", "dev"]) == 0
-    assert stat.S_IMODE(envf.stat().st_mode) == 0o600
+    if os.name != "nt":  # POSIX perms; Windows enforces via ACLs (st_mode won't reflect them)
+        assert stat.S_IMODE(envf.stat().st_mode) == 0o600
     from kdbx_core import secretio
 
     assert secretio.parse_dotenv(envf.read_text())["OPENAI_API_KEY"] == SECRET
