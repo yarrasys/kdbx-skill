@@ -53,12 +53,15 @@ def _open(vault, keyfile):
 def save(kp, vault) -> None:
     vault = pathlib.Path(vault)
     tmp = vault.with_suffix(vault.suffix + ".tmp")
+    bak = vault.with_suffix(vault.suffix + ".bak")
     kp.save(str(tmp))
     secretio.restrict_perms(tmp)
     if vault.exists():
-        os.replace(vault, vault.with_suffix(vault.suffix + ".bak"))
+        os.replace(vault, bak)  # crash-safety: keep the prior vault until the new one lands
     os.replace(tmp, vault)
     secretio.restrict_perms(vault)
+    if bak.exists():
+        os.unlink(bak)  # replace succeeded — drop the redundant 0600 copy of the secrets
 
 
 # ── recycle-bin awareness ──────────────────────────────────────────────────

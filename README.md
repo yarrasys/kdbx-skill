@@ -5,12 +5,13 @@ A Claude Code skill that reads/writes KeePassXC `.kdbx` vaults to manage
 source of truth for secrets, API keys, and tokens, and getting them into your
 tools **without ever printing them into the transcript, logs, or shell history**.
 
-> ⚠️ **Status: design phase (work in progress).** The validated design lives in
-> [`docs/superpowers/specs/2026-06-27-kdbx-skill-design.md`](docs/superpowers/specs/2026-06-27-kdbx-skill-design.md).
-> The implementation is not built yet. Do not use for real secrets until the
-> test suite (§13/§16 of the spec) is green.
+> **Status: implemented; test suite green (46 tests, macOS/Linux).** The validated design is in
+> [`docs/superpowers/specs/2026-06-27-kdbx-skill-design.md`](docs/superpowers/specs/2026-06-27-kdbx-skill-design.md)
+> and the implementation plan in [`docs/superpowers/plans/2026-06-27-kdbx-skill.md`](docs/superpowers/plans/2026-06-27-kdbx-skill.md).
+> ⚠️ Windows paths are designed but not yet exercised on real Windows (unit-tested via
+> monkeypatch); testers welcome. Audit before trusting it with anything that matters.
 
-## What it does (planned)
+## What it does
 
 - **Per project, per env** vaults (`<keepassxc-dir>/<project>/<env>.kdbx`),
   **key-file-only** unlock (no master password), KDBX4 + Argon2.
