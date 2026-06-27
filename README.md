@@ -41,7 +41,7 @@ See [`plugins/kdbx`](plugins/kdbx) for what the plugin adds over the skill.
 
 | Skill | Description | Docs |
 |-------|-------------|------|
-| [**kdbx**](skills/kdbx) | Per-project/per-env credentials in key-file-only KeePassXC vaults — replaces `.env` and injects secrets into commands without printing them. | [SKILL.md](skills/kdbx/SKILL.md) · [README](skills/kdbx/README.md) |
+| [**kdbx**](skills/kdbx) | Per-project/per-env credentials in key-file-only KeePassXC vaults — replaces `.env`, injects secrets into commands without printing them, and enforces an agent/human boundary (agents read & use; humans write). | [SKILL.md](skills/kdbx/SKILL.md) · [README](skills/kdbx/README.md) · [plugin](plugins/kdbx) |
 
 ## Repository layout
 
