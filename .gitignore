@@ -17,8 +17,8 @@ venv/
 .mypy_cache/
 .ruff_cache/
 
-# ── Local Claude Code config (machine-specific paths) ──────────────────
-.claude/settings.local.json
+# ── Local Claude Code dev config (not part of the skill) ───────────────
+.claude/
 
 # ── OS / editor ────────────────────────────────────────────────────────
 .DS_Store
