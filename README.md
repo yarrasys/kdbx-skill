@@ -28,6 +28,19 @@ tools **without ever printing them into the transcript, logs, or shell history**
 Requires [`uv`](https://docs.astral.sh/uv/). The bundled script declares its
 dependencies inline (PEP 723) and runs via `uv run` — no global installs.
 
+## Install (as a Claude Code skill)
+
+Clone into your Claude Code skills directory on any machine:
+
+```bash
+git clone https://github.com/yarrasys/kdbx-skill ~/.claude/skills/kdbx
+```
+
+Claude Code discovers it via `~/.claude/skills/kdbx/SKILL.md`. Update later with
+`git -C ~/.claude/skills/kdbx pull`. (Per-project install: clone anywhere and point your
+project's skill config at it.) The CLI is then invoked as
+`uv run --locked ~/.claude/skills/kdbx/kdbx.py <op>`.
+
 ## License
 
 The skill's own source is **MIT** (see [`LICENSE`](LICENSE)). The default engine
