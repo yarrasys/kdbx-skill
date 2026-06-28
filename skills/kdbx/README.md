@@ -155,10 +155,10 @@ itself, re-run `install-launcher --force` to refresh it.
 
 ## Development & contributing
 
-See [CONTRIBUTING.md](https://github.com/yarrasys/skills/blob/main/CONTRIBUTING.md) and
-[AGENTS.md](https://github.com/yarrasys/skills/blob/main/AGENTS.md). The design spec and TDD plan
-live under [`docs/superpowers/`](https://github.com/yarrasys/skills/tree/main/docs/superpowers).
-Windows verification is tracked in [issues](https://github.com/yarrasys/skills/issues?q=is%3Aissue+label%3A%22skill%3A+kdbx%22).
+See the repo [CONTRIBUTING.md](https://github.com/yarrasys/skills/blob/main/CONTRIBUTING.md) and this
+skill's [AGENTS.md](AGENTS.md) (golden rules, build/test, engine boundary). The design spec and TDD
+plan live under [`docs/superpowers/`](https://github.com/yarrasys/skills/tree/main/skills/kdbx/docs/superpowers).
+Issues are tracked at [github.com/yarrasys/skills/issues](https://github.com/yarrasys/skills/issues?q=is%3Aissue+label%3A%22skill%3A+kdbx%22).
 
 ## License
 

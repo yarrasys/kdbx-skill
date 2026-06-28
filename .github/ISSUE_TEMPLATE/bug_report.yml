@@ -1,6 +1,6 @@
 name: Bug report
 description: Report a problem with a skill in this repo
-labels: ["bug", "skill: kdbx"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
@@ -25,10 +25,10 @@ body:
     validations:
       required: true
   - type: input
-    id: kdbx-version
+    id: skill-version
     attributes:
-      label: kdbx version
-      description: Output of `uv run --locked kdbx.py --version`
+      label: Skill version
+      description: The affected skill's version (e.g. `kdbx --version`)
     validations:
       required: false
   - type: dropdown
@@ -53,7 +53,7 @@ body:
     id: logs
     attributes:
       label: Logs / error output
-      description: Re-run with `KDBX_DEBUG=1` for a full traceback. Redact any secret values.
+      description: Re-run in the skill's debug mode for a full traceback (e.g. `KDBX_DEBUG=1` for kdbx). Redact any secret values.
       render: shell
     validations:
       required: false

@@ -3,8 +3,8 @@ import sys
 
 import pytest
 
-# the skill package lives under skills/kdbx/ — put it on the path so `import kdbx_core` works
-SKILL_DIR = pathlib.Path(__file__).resolve().parent.parent / "skills" / "kdbx"
+# tests live under skills/kdbx/tests/ — the skill dir (with kdbx_core) is one up
+SKILL_DIR = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(SKILL_DIR))
 
 

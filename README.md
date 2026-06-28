@@ -65,6 +65,6 @@ concerns (e.g. `skill: kdbx`). For vulnerabilities, see [SECURITY.md](SECURITY.m
 
 ## License
 
-[MIT](LICENSE) for this repository's own source. Individual skills may pull runtime dependencies
-under other licenses — see each skill's `NOTICE`/README (e.g. kdbx's engine `pykeepass` is GPL-3.0,
-fetched at runtime and never bundled; see [NOTICE](NOTICE)).
+[MIT](LICENSE) for this repository's own source (see [NOTICE](NOTICE)). Individual skills may pull
+runtime dependencies under other licenses — see each skill's `NOTICE` (e.g. kdbx's engine `pykeepass`
+is GPL-3.0, fetched at runtime and never bundled; see [skills/kdbx/NOTICE](skills/kdbx/NOTICE)).

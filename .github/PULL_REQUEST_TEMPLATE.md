@@ -2,13 +2,12 @@
 
 ## What & why
 
-<!-- What does this change and why? Link any issue: "Closes #123". -->
+<!-- What does this change and why? Which skill does it affect? Link any issue: "Closes #123". -->
 
 ## Checklist
 
-- [ ] Tests added/updated and the suite passes (`uv run --with pytest --with pykeepass --with python-dotenv --with filelock --with platformdirs python -m pytest`)
+- [ ] Tests added/updated and the suite passes (`uv run --with pytest --with pykeepass --with python-dotenv --with filelock --with platformdirs --with "mcp>=1.0,<2" python -m pytest`)
 - [ ] `uvx ruff check .` and `uvx ruff format --check .` pass
 - [ ] No secret, vault (`*.kdbx`), or key file (`*.keyx`) is committed
-- [ ] `skills/kdbx/kdbx_core/vault.py` remains the only module importing `pykeepass` (engine-agnostic interface)
-- [ ] If deps changed: ran `uv lock --script skills/kdbx/kdbx.py` and committed `kdbx.py.lock`
-- [ ] Updated `CHANGELOG.md` under `## [Unreleased]`
+- [ ] Updated **the affected skill's** `CHANGELOG.md` under `## [Unreleased]`
+- [ ] Followed any skill-specific rules in `skills/<name>/AGENTS.md` (e.g. engine boundary, lockfiles)

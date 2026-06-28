@@ -1,10 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-title: "kdbx-skill"
+message: "If you use software from this repository, please cite it as below."
+title: "Yarrasys Skills"
 abstract: >-
-  A Claude Code skill and CLI that manages per-project, per-environment credentials in
-  key-file-only KeePassXC KDBX4 vaults, replacing .env as the source of truth and injecting
-  secrets into commands without printing them.
+  An umbrella collection of open-source agent skills for Claude Code and the broader AI-agent
+  ecosystem — each installable individually via the Skills CLI, with optional Claude Code plugins.
 type: software
 authors:
   - family-names: Shaheen
@@ -14,16 +13,8 @@ authors:
 repository-code: "https://github.com/yarrasys/skills"
 url: "https://github.com/yarrasys/skills"
 license: MIT
-version: "0.1.0"
-date-released: "2026-06-27"
 keywords:
   - claude-code
-  - claude-code-skill
+  - agent-skills
+  - claude-code-plugins
   - ai-agents
-  - keepassxc
-  - kdbx
-  - secrets-management
-  - credentials
-  - dotenv
-  - cli
-  - python
