@@ -43,7 +43,7 @@ done
 
 if [ -z "$py" ] || [ ! -f "$py" ]; then
     echo "kdbx: could not locate kdbx.py. Install the skill with:" >&2
-    echo "  npx skills add yarrasys/skills@kdbx -g -y" >&2
+    echo "  npx skills add yarrasys/extensions@kdbx -g -y" >&2
     exit 127
 fi
 

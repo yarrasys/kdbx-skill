@@ -6,7 +6,7 @@
     "name": "Yarrasys",
     "url": "https://github.com/yarrasys"
   },
-  "homepage": "https://github.com/yarrasys/skills/tree/main/plugins/kdbx",
+  "homepage": "https://github.com/yarrasys/extensions/tree/main/plugins/kdbx",
   "license": "MIT",
   "keywords": ["secrets", "credentials", "keepassxc", "kdbx", "security", "dotenv"]
 }

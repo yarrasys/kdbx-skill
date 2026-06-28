@@ -7,8 +7,8 @@
 A [Claude Code](https://claude.com/claude-code) skill (and standalone CLI) that replaces `.env`
 as the source of truth for secrets, API keys, and tokens.
 
-[![CI](https://github.com/yarrasys/skills/actions/workflows/ci.yml/badge.svg)](https://github.com/yarrasys/skills/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/yarrasys/skills/blob/main/LICENSE)
+[![CI](https://github.com/yarrasys/extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/yarrasys/extensions/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/yarrasys/extensions/blob/main/LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-8A2BE2.svg)](SKILL.md)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
@@ -32,7 +32,7 @@ It's built for **AI coding agents**: the agent handles entry paths and variable 
 With the [Skills CLI](https://skills.sh/) (recommended):
 
 ```bash
-npx skills add yarrasys/skills@kdbx          # add -g -y for a global, non-interactive install
+npx skills add yarrasys/extensions@kdbx          # add -g -y for a global, non-interactive install
 ```
 
 It installs into your agent's skills directory and is discovered via `SKILL.md`. Invoke the CLI as
@@ -42,14 +42,14 @@ It installs into your agent's skills directory and is discovered via `SKILL.md`.
 <summary>Manual install</summary>
 
 ```bash
-git clone https://github.com/yarrasys/skills
+git clone https://github.com/yarrasys/extensions
 ln -s "$PWD/skills/skills/kdbx" ~/.claude/skills/kdbx
 ```
 </details>
 
 > **Plugin (optional).** For an *enforced* secret-leak guard hook, `/kdbx:*` commands, and safe MCP
 > tools on top of this skill, install the [kdbx plugin](../../plugins/kdbx):
-> `/plugin marketplace add yarrasys/skills` then `/plugin install kdbx@yarrasys-skills`.
+> `/plugin marketplace add yarrasys/extensions` then `/plugin install kdbx@yarrasys-extensions`.
 
 ## Quickstart
 
@@ -134,7 +134,7 @@ itself, re-run `install-launcher --force` to refresh it.
   orchestrator's `--from-env VAR`. Never `echo SECRET | kdbx set …`.
 - Vault, key file, and exported `.env` are `0600` (POSIX) / owner-only ACL (Windows).
 - Full threat model, `run` trust boundary, and rotation/leak runbooks: [`references/security.md`](references/security.md).
-- Reporting vulnerabilities: [SECURITY.md](https://github.com/yarrasys/skills/blob/main/SECURITY.md).
+- Reporting vulnerabilities: [SECURITY.md](https://github.com/yarrasys/extensions/blob/main/SECURITY.md).
 
 ## Requirements
 
@@ -142,7 +142,7 @@ itself, re-run `install-launcher --force` to refresh it.
   (≥3.10) and the locked dependencies on first run, then caches them.
 - The engine [`pykeepass`](https://github.com/libkeepass/pykeepass) (**GPL-3.0**) is fetched at
   runtime and **never bundled** by this MIT-licensed project — see
-  [NOTICE](https://github.com/yarrasys/skills/blob/main/NOTICE).
+  [NOTICE](https://github.com/yarrasys/extensions/blob/main/NOTICE).
 
 ## How it compares
 
@@ -155,13 +155,13 @@ itself, re-run `install-launcher --force` to refresh it.
 
 ## Development & contributing
 
-See the repo [CONTRIBUTING.md](https://github.com/yarrasys/skills/blob/main/CONTRIBUTING.md) and this
+See the repo [CONTRIBUTING.md](https://github.com/yarrasys/extensions/blob/main/CONTRIBUTING.md) and this
 skill's [AGENTS.md](AGENTS.md) (golden rules, build/test, engine boundary). The design spec and TDD
-plan live under [`docs/superpowers/`](https://github.com/yarrasys/skills/tree/main/skills/kdbx/docs/superpowers).
-Issues are tracked at [github.com/yarrasys/skills/issues](https://github.com/yarrasys/skills/issues?q=is%3Aissue+label%3A%22skill%3A+kdbx%22).
+plan live under [`docs/superpowers/`](https://github.com/yarrasys/extensions/tree/main/skills/kdbx/docs/superpowers).
+Issues are tracked at [github.com/yarrasys/extensions/issues](https://github.com/yarrasys/extensions/issues?q=is%3Aissue+label%3A%22skill%3A+kdbx%22).
 
 ## License
 
-[MIT](https://github.com/yarrasys/skills/blob/main/LICENSE). The engine `pykeepass` is GPL-3.0,
+[MIT](https://github.com/yarrasys/extensions/blob/main/LICENSE). The engine `pykeepass` is GPL-3.0,
 fetched at runtime and never redistributed here — see
-[NOTICE](https://github.com/yarrasys/skills/blob/main/NOTICE). *(Not legal advice.)*
+[NOTICE](https://github.com/yarrasys/extensions/blob/main/NOTICE). *(Not legal advice.)*

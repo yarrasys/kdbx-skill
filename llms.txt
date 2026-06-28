@@ -1,8 +1,8 @@
-# Yarrasys Skills
+# Yarrasys Extensions
 
 > An umbrella collection of open-source agent skills for Claude Code and the broader AI-agent
 > ecosystem. Each skill lives under `skills/<name>/` with its own SKILL.md and is installable
-> individually via the Skills CLI: `npx skills add yarrasys/skills@<name>`. The repo also doubles
+> individually via the Skills CLI: `npx skills add yarrasys/extensions@<name>`. The repo also doubles
 > as a Claude Code **plugin marketplace** — some skills ship a plugin wrapper that adds enforced
 > hooks, MCP tools, and slash commands on top of the skill.
 
@@ -16,23 +16,23 @@
 > Built for AI coding agents: the agent handles entry paths and variable names only — it never
 > authors or observes a secret value.
 
-- [SKILL.md](https://github.com/yarrasys/skills/blob/main/skills/kdbx/SKILL.md): agent-facing skill definition — when to use, invocation, the 13 operations, the agent/human role boundary, security do/don'ts.
-- [Skill README](https://github.com/yarrasys/skills/blob/main/skills/kdbx/README.md): overview, install, quickstart, comparison.
-- [references/schema.md](https://github.com/yarrasys/skills/blob/main/skills/kdbx/references/schema.md): the `.keepassxc.json` pointer schema and entry-path grammar.
-- [references/security.md](https://github.com/yarrasys/skills/blob/main/skills/kdbx/references/security.md): threat model, `run` trust boundary, rotation and leak runbooks.
-- [references/fallback.md](https://github.com/yarrasys/skills/blob/main/skills/kdbx/references/fallback.md): read-only `keepassxc-cli` commands for environments without uv.
+- [SKILL.md](https://github.com/yarrasys/extensions/blob/main/skills/kdbx/SKILL.md): agent-facing skill definition — when to use, invocation, the 13 operations, the agent/human role boundary, security do/don'ts.
+- [Skill README](https://github.com/yarrasys/extensions/blob/main/skills/kdbx/README.md): overview, install, quickstart, comparison.
+- [references/schema.md](https://github.com/yarrasys/extensions/blob/main/skills/kdbx/references/schema.md): the `.keepassxc.json` pointer schema and entry-path grammar.
+- [references/security.md](https://github.com/yarrasys/extensions/blob/main/skills/kdbx/references/security.md): threat model, `run` trust boundary, rotation and leak runbooks.
+- [references/fallback.md](https://github.com/yarrasys/extensions/blob/main/skills/kdbx/references/fallback.md): read-only `keepassxc-cli` commands for environments without uv.
 
 Operations: `init · set · get · list · delete · mv · run · export · import · check · envs · rekey · install-launcher`.
 
 Roles: agents read/use secrets (`run`/`get`/`list`/`check`/`envs`/`init`); writes (`set`/`delete`/`mv`/`import`/`rekey`) and value-exposure (`get --reveal`/`--clip`, `export`) are a human role. The plugin's `PreToolUse` hook enforces this; the bare skill states it as a contract.
 
-Install (skill): `npx skills add yarrasys/skills@kdbx` · Requires [uv](https://docs.astral.sh/uv/);
+Install (skill): `npx skills add yarrasys/extensions@kdbx` · Requires [uv](https://docs.astral.sh/uv/);
 the engine `pykeepass` (GPL-3.0) is fetched at runtime, never bundled.
 
-Install (plugin): `/plugin marketplace add yarrasys/skills` then `/plugin install kdbx@yarrasys-skills` — adds the enforced role-guard + leak-guard hook, a safe MCP server (no value-crossing tools), and `/kdbx:*` commands.
+Install (plugin): `/plugin marketplace add yarrasys/extensions` then `/plugin install kdbx@yarrasys-extensions` — adds the enforced role-guard + leak-guard hook, a safe MCP server (no value-crossing tools), and `/kdbx:*` commands.
 
 ## Repository
 
-- [README](https://github.com/yarrasys/skills/blob/main/README.md): the collection index.
-- [CONTRIBUTING](https://github.com/yarrasys/skills/blob/main/CONTRIBUTING.md) · [AGENTS.md](https://github.com/yarrasys/skills/blob/main/AGENTS.md) (guidance for AI agents working in this repo).
-- Per-skill design specs and plans live under each skill, e.g. [skills/kdbx/docs/](https://github.com/yarrasys/skills/tree/main/skills/kdbx/docs/superpowers).
+- [README](https://github.com/yarrasys/extensions/blob/main/README.md): the collection index.
+- [CONTRIBUTING](https://github.com/yarrasys/extensions/blob/main/CONTRIBUTING.md) · [AGENTS.md](https://github.com/yarrasys/extensions/blob/main/AGENTS.md) (guidance for AI agents working in this repo).
+- Per-skill design specs and plans live under each skill, e.g. [skills/kdbx/docs/](https://github.com/yarrasys/extensions/tree/main/skills/kdbx/docs/superpowers).

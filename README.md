@@ -1,14 +1,14 @@
 <div align="center">
 
-# 🧰 Yarrasys Skills
+# 🧰 Yarrasys Extensions
 
 **Open-source [agent skills](https://skills.sh/) for Claude Code and the broader AI-agent ecosystem.**
 
-[![CI](https://github.com/yarrasys/skills/actions/workflows/ci.yml/badge.svg)](https://github.com/yarrasys/skills/actions/workflows/ci.yml)
+[![CI](https://github.com/yarrasys/extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/yarrasys/extensions/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Skills CLI](https://img.shields.io/badge/install-npx%20skills-000000.svg)](https://skills.sh/yarrasys/skills)
-[![skills.sh](https://skills.sh/b/yarrasys/skills)](https://skills.sh/yarrasys/skills)
+[![Skills CLI](https://img.shields.io/badge/install-npx%20skills-000000.svg)](https://skills.sh/yarrasys/extensions)
+[![skills.sh](https://skills.sh/b/yarrasys/extensions)](https://skills.sh/yarrasys/extensions)
 
 </div>
 
@@ -20,10 +20,10 @@ own `SKILL.md`, so it can be discovered and installed individually by AI coding 
 ## Install a skill
 
 ```bash
-npx skills add yarrasys/skills@<name>        # add -g -y for a global, non-interactive install
+npx skills add yarrasys/extensions@<name>        # add -g -y for a global, non-interactive install
 ```
 
-For example: `npx skills add yarrasys/skills@kdbx`.
+For example: `npx skills add yarrasys/extensions@kdbx`.
 
 ### Or install as a Claude Code plugin
 
@@ -31,8 +31,8 @@ This repo also doubles as a [plugin marketplace](.claude-plugin/marketplace.json
 ship a plugin wrapper that adds enforced hooks, `/`-commands, and MCP tools on top of the skill:
 
 ```text
-/plugin marketplace add yarrasys/skills
-/plugin install kdbx@yarrasys-skills
+/plugin marketplace add yarrasys/extensions
+/plugin install kdbx@yarrasys-extensions
 ```
 
 See [`plugins/kdbx`](plugins/kdbx) for what the plugin adds over the skill.
@@ -60,7 +60,7 @@ inside its own directory.
 
 Issues and PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md), [AGENTS.md](AGENTS.md) (for AI
 agents working in this repo), and the [Code of Conduct](CODE_OF_CONDUCT.md). File bugs and ideas as
-[GitHub Issues](https://github.com/yarrasys/skills/issues); each is labelled with the skill it
+[GitHub Issues](https://github.com/yarrasys/extensions/issues); each is labelled with the skill it
 concerns (e.g. `skill: kdbx`). For vulnerabilities, see [SECURITY.md](SECURITY.md).
 
 ## License

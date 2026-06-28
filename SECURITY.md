@@ -15,6 +15,6 @@ General posture:
 ## Reporting a vulnerability
 
 Please report suspected vulnerabilities privately rather than opening a public issue — either through
-GitHub's [private vulnerability reporting](https://github.com/yarrasys/skills/security/advisories/new)
+GitHub's [private vulnerability reporting](https://github.com/yarrasys/extensions/security/advisories/new)
 or by email to **hello@yarrasys.com**. Include a description, repro steps, and impact. You'll get an
 acknowledgement and a fix timeline.
