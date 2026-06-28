@@ -8,7 +8,7 @@ import sys
 
 import pytest
 
-_GUARD = pathlib.Path(__file__).resolve().parents[1] / "plugins" / "kdbx" / "hooks" / "guard.py"
+_GUARD = pathlib.Path(__file__).resolve().parents[1] / "hooks" / "guard.py"
 
 _spec = importlib.util.spec_from_file_location("kdbx_guard", _GUARD)
 guard = importlib.util.module_from_spec(_spec)

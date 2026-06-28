@@ -1,28 +1,20 @@
 # Security Policy
 
-> ⚠️ This project is in the design phase and not yet implemented. Do not use it
-> to store real secrets until its test suite is green.
+This repository hosts multiple agent skills; **each skill ships its own threat model and security
+notes** under `skills/<name>/references/security.md` (e.g.
+[`skills/kdbx/references/security.md`](skills/kdbx/references/security.md)). Read the relevant skill's
+docs before relying on it.
 
-## Threat model & design posture
+General posture:
 
-The full threat model — key-file-only unlock, secret-handling invariants
-(the agent never authors or observes a value; nothing on argv/stdout), the
-0600/ACL permission model, the soft-delete-is-recoverable property, and the
-`run` env-injection trust boundary — is documented in
-[`skills/kdbx/references/security.md`](skills/kdbx/references/security.md) and the design spec
-(`docs/superpowers/specs/2026-06-27-kdbx-skill-design.md`, §8/§12).
-
-Key points a user must understand:
-
-- **The key file is the sole secret.** Anyone who can read the key file *and*
-  the vault can open it. Losing the key file makes the vault unrecoverable.
-- **Secrets live outside any repo**, under the user config dir — never committed.
-- **No warranty.** Provided "as is" under the MIT License. Audit before relying
-  on it for anything that matters.
+- **No warranty.** Everything here is provided "as is" under the MIT License — audit a skill before
+  relying on it for anything that matters.
+- Skills that manage secrets keep them outside any repo and never commit them; see the skill's docs
+  for its specific handling guarantees.
 
 ## Reporting a vulnerability
 
-Please report suspected vulnerabilities privately rather than opening a public issue —
-either through GitHub's [private vulnerability reporting](https://github.com/yarrasys/skills/security/advisories/new)
-or by email to **hello@yarrasys.com**. Include a description, repro steps, and impact.
-You'll get an acknowledgement and a fix timeline.
+Please report suspected vulnerabilities privately rather than opening a public issue — either through
+GitHub's [private vulnerability reporting](https://github.com/yarrasys/skills/security/advisories/new)
+or by email to **hello@yarrasys.com**. Include a description, repro steps, and impact. You'll get an
+acknowledgement and a fix timeline.

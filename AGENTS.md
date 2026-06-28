@@ -1,32 +1,29 @@
 # AGENTS.md
 
-Guidance for AI coding agents working **in** this repository (and using the skill it ships).
-See also [SKILL.md](skills/kdbx/SKILL.md) (how to *use* kdbx) and [CONTRIBUTING.md](CONTRIBUTING.md).
+Guidance for AI coding agents working **in this repository** — an umbrella monorepo of agent skills.
 
 ## What this repo is
 
-`kdbx` — a single PEP-723 Python entry (`kdbx.py`) plus focused modules in `kdbx_core/`,
-shipped as a Claude Code skill. It manages credentials in key-file-only KeePassXC KDBX4 vaults.
+`yarrasys/skills` — a collection of self-contained agent skills, each under `skills/<name>/` with its
+own `SKILL.md` (and an optional Claude Code plugin under `plugins/<name>/`). The repo also serves as a
+plugin marketplace (`.claude-plugin/marketplace.json`).
 
-## Golden rule (security)
+## Working in a skill
 
-**Never author or observe a secret value.** Your job is the entry **path / variable name** only.
-- To store a value, instruct the human to pipe it on *their* terminal: `kdbx set api/openai < secret.txt`,
-  or use `--from-env VAR` set by an outer orchestrator (CI). Never `echo SECRET | kdbx set …`.
-- Prefer `kdbx run -- <cmd>` (inject, never print) over `export` or `get --reveal`.
-- Never put a secret value on argv, in a commit, in a test fixture, or in the transcript.
+Each skill is self-contained — its code, tests, docs, `CHANGELOG`, `NOTICE`, and dev guidance live
+under `skills/<name>/` (+ `plugins/<name>/`). **Before working on a skill, read that skill's
+`AGENTS.md`** (e.g. [`skills/kdbx/AGENTS.md`](skills/kdbx/AGENTS.md)) — it carries the skill-specific
+golden rules, build/test commands, and engine boundaries.
 
-## Working in the codebase
+## Repo-wide norms
 
-- **Run the tests:** `uv run --with pytest --with pykeepass --with python-dotenv --with filelock --with platformdirs python -m pytest`
-- **Lint:** `uvx ruff check .` (and `uvx ruff format .`).
-- **Smoke the locked entrypoint:** `uv run --locked skills/kdbx/kdbx.py --version`.
-- **Engine boundary:** only `skills/kdbx/kdbx_core/vault.py` may import `pykeepass`. Keep its public interface
-  engine-agnostic (plain paths/str in and out) — it is the single swap point for a permissive engine.
-- **TDD:** add a failing test first; keep the suite green. CI runs on Linux/macOS/Windows.
-- **Lockfile:** if you change `kdbx.py` deps, run `uv lock --script skills/kdbx/kdbx.py` and commit `kdbx.py.lock`.
-- **Docs of record:** the design spec and plan live under `docs/superpowers/`.
+- **TDD**; keep the suite green. Lint with `uvx ruff check .` / `uvx ruff format .`.
+- Run all tests: `uv run --with pytest --with pykeepass --with python-dotenv --with filelock --with platformdirs --with "mcp>=1.0,<2" python -m pytest`.
+- Record changes in **the affected skill's** `CHANGELOG.md`; release tags are scoped: `<skill>/v<version>`.
+- Never commit a real secret (vaults / key files / `.env` are gitignored).
+- See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
 
 ## Tracking
 
-File bugs, ideas, and follow-ups as **GitHub Issues**: https://github.com/yarrasys/skills/issues
+File bugs and ideas as **GitHub Issues**: https://github.com/yarrasys/skills/issues (each labelled
+with the skill it concerns, e.g. `skill: kdbx`).

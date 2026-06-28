@@ -35,4 +35,4 @@ Install (plugin): `/plugin marketplace add yarrasys/skills` then `/plugin instal
 
 - [README](https://github.com/yarrasys/skills/blob/main/README.md): the collection index.
 - [CONTRIBUTING](https://github.com/yarrasys/skills/blob/main/CONTRIBUTING.md) · [AGENTS.md](https://github.com/yarrasys/skills/blob/main/AGENTS.md) (guidance for AI agents working in this repo).
-- [docs/](https://github.com/yarrasys/skills/tree/main/docs/superpowers): design specs and implementation plans.
+- Per-skill design specs and plans live under each skill, e.g. [skills/kdbx/docs/](https://github.com/yarrasys/skills/tree/main/skills/kdbx/docs/superpowers).

@@ -10,7 +10,7 @@ import pathlib
 
 import pytest
 
-_SERVER = pathlib.Path(__file__).resolve().parents[1] / "plugins" / "kdbx" / "mcp" / "server.py"
+_SERVER = pathlib.Path(__file__).resolve().parents[1] / "mcp" / "server.py"
 
 _spec = importlib.util.spec_from_file_location("kdbx_mcp_server", _SERVER)
 server = importlib.util.module_from_spec(_spec)

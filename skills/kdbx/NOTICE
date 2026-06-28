@@ -1,0 +1,26 @@
+kdbx skill
+Copyright (c) 2026 Nabeel Shaheen
+Licensed under the MIT License (see LICENSE).
+
+── Engine dependency: licensing note ──────────────────────────────────────
+
+The kdbx skill's own source is MIT. Its default writer engine, `pykeepass`,
+is GPL-3.0 and is fetched at runtime onto your machine — it is never bundled
+or redistributed by this project. You may use, sell, run as SaaS, run in CI,
+install at runtime, or shell out to keepassxc-cli freely.
+
+If you intend to ship a closed-source product that BUNDLES the engine (an
+installer, vendored dependencies, an image baked with the engine, or a shipped
+desktop app), the combined work inherits GPL-3.0 — in that case comply with
+GPL-3.0, use the keepassxc-cli read path, or swap in a permissive engine
+(the writer interface is designed to allow this).
+
+This is not legal advice. For a monetized product, confirm with counsel.
+
+── Third-party components (fetched at runtime, not redistributed here) ─────
+
+  pykeepass       GPL-3.0       (default writer engine)
+  python-dotenv   BSD-3-Clause
+  filelock        Unlicense/MIT
+  platformdirs    MIT
+  keepassxc-cli   GPL-2.0/3.0   (optional, separate program; read-only fallback)

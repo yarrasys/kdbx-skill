@@ -5,8 +5,7 @@
     "url": "https://github.com/yarrasys"
   },
   "metadata": {
-    "description": "Yarrasys agent skills, also distributed as Claude Code plugins.",
-    "version": "0.1.0"
+    "description": "Yarrasys agent skills, also distributed as Claude Code plugins."
   },
   "plugins": [
     {

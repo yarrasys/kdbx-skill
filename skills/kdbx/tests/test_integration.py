@@ -119,7 +119,7 @@ def test_set_never_puts_secret_in_argv(repo, monkeypatch):
 def test_cli_help_via_uv():
     import pathlib
 
-    skill_dir = pathlib.Path(__file__).resolve().parent.parent / "skills" / "kdbx"
+    skill_dir = pathlib.Path(__file__).resolve().parent.parent
     r = subprocess.run(
         ["uv", "run", "kdbx.py", "--help"], capture_output=True, text=True, cwd=skill_dir
     )
