@@ -19,8 +19,8 @@ slash commands, or MCP tools.
 This repository doubles as a plugin marketplace.
 
 ```text
-/plugin marketplace add yarrasys/skills
-/plugin install kdbx@yarrasys-skills
+/plugin marketplace add yarrasys/extensions
+/plugin install kdbx@yarrasys-extensions
 ```
 
 (`uv` is required at runtime, as for the skill.)

@@ -1,4 +1,4 @@
-# Contributing to Yarrasys Skills
+# Contributing to Yarrasys Extensions
 
 Thanks for your interest! This is an umbrella monorepo of agent skills — contributions (bug reports,
 fixes, docs, new skills) are welcome.
@@ -20,7 +20,7 @@ inside its directory and follow that skill's `AGENTS.md` for skill-specific rule
 Requires [uv](https://docs.astral.sh/uv/) (the only prerequisite — it provides Python + deps).
 
 ```bash
-git clone https://github.com/yarrasys/skills && cd skills
+git clone https://github.com/yarrasys/extensions && cd skills
 
 # run all tests
 uv run --with pytest --with pykeepass --with python-dotenv --with filelock --with platformdirs --with "mcp>=1.0,<2" python -m pytest
@@ -33,7 +33,7 @@ uvx ruff check . && uvx ruff format .
 
 ## Pull requests
 
-1. Open an [issue](https://github.com/yarrasys/skills/issues) first for anything non-trivial.
+1. Open an [issue](https://github.com/yarrasys/extensions/issues) first for anything non-trivial.
 2. Work **test-first (TDD)** — add a failing test, then the minimal code to pass it. Keep the suite green.
 3. Run `ruff check` / `ruff format` before pushing. CI runs tests on Linux/macOS/Windows + lint.
 4. Update **the affected skill's** `CHANGELOG.md` under `## [Unreleased]`.

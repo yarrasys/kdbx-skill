@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use software from this repository, please cite it as below."
-title: "Yarrasys Skills"
+title: "Yarrasys Extensions"
 abstract: >-
   An umbrella collection of open-source agent skills for Claude Code and the broader AI-agent
   ecosystem — each installable individually via the Skills CLI, with optional Claude Code plugins.
@@ -10,8 +10,8 @@ authors:
     given-names: Nabeel
     email: hello@yarrasys.com
     affiliation: Yarrasys
-repository-code: "https://github.com/yarrasys/skills"
-url: "https://github.com/yarrasys/skills"
+repository-code: "https://github.com/yarrasys/extensions"
+url: "https://github.com/yarrasys/extensions"
 license: MIT
 keywords:
   - claude-code

@@ -96,7 +96,7 @@ def _cache(home, version):
         / ".claude"
         / "plugins"
         / "cache"
-        / "yarrasys-skills"
+        / "yarrasys-extensions"
         / "kdbx"
         / version
         / "skills"

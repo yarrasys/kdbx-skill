@@ -4,7 +4,7 @@ Guidance for AI coding agents working **in this repository** — an umbrella mon
 
 ## What this repo is
 
-`yarrasys/skills` — a collection of self-contained agent skills, each under `skills/<name>/` with its
+`yarrasys/extensions` — a collection of self-contained agent skills, each under `skills/<name>/` with its
 own `SKILL.md` (and an optional Claude Code plugin under `plugins/<name>/`). The repo also serves as a
 plugin marketplace (`.claude-plugin/marketplace.json`).
 
@@ -25,5 +25,5 @@ golden rules, build/test commands, and engine boundaries.
 
 ## Tracking
 
-File bugs and ideas as **GitHub Issues**: https://github.com/yarrasys/skills/issues (each labelled
+File bugs and ideas as **GitHub Issues**: https://github.com/yarrasys/extensions/issues (each labelled
 with the skill it concerns, e.g. `skill: kdbx`).

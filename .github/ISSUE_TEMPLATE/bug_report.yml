@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         Thanks for the report! **Never paste a real secret, vault, or key file.** Redact values.
-        For security vulnerabilities, do not file here — see [SECURITY.md](https://github.com/yarrasys/skills/blob/main/SECURITY.md).
+        For security vulnerabilities, do not file here — see [SECURITY.md](https://github.com/yarrasys/extensions/blob/main/SECURITY.md).
   - type: dropdown
     id: skill
     attributes:

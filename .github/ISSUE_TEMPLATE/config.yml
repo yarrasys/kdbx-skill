@@ -1,10 +1,10 @@
 blank_issues_enabled: false
 contact_links:
   - name: 🔒 Report a security vulnerability
-    url: https://github.com/yarrasys/skills/security/advisories/new
+    url: https://github.com/yarrasys/extensions/security/advisories/new
     about: Please report vulnerabilities privately, not as public issues. See SECURITY.md.
   - name: 💬 Questions & ideas (Discussions)
-    url: https://github.com/yarrasys/skills/discussions
+    url: https://github.com/yarrasys/extensions/discussions
     about: Ask questions or discuss ideas here.
   - name: ✉️ Contact Yarrasys
     url: mailto:hello@yarrasys.com
